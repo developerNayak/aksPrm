@@ -18,6 +18,8 @@ var totalDiscount;
 var totalCost;
 var discountedCost;
 var flag;
+var amountPaid;
+var totalAmount = [];
 
 
 
@@ -70,7 +72,7 @@ while(input === "1"){
 
 
    if(day ==="sunday" && totalTime <=8){
-        totalCost = morningHours*2 + eveningHours*2;
+        totalCost = morningHours*2 + 2;
         priviledgeAccessNumber = prompt("enter the previledge access number or 0 if none");
         if(priviledgeAccessNumber === "0"){
           console.log("you are available for no discount");
@@ -87,7 +89,7 @@ while(input === "1"){
     }
 
     if((day ==="monday" || day ==="tuesday" || day==="wednesday" || day==="thursday" || day==="friday") && totalTime<=3 ){
-      totalCost = morningHours*8 + eveningHours*2;
+      totalCost = morningHours*8 + 2;
 
       priviledgeAccessNumber = prompt("enter the previledge access number or 0 if none");
       if(priviledgeAccessNumber === "0"){
@@ -106,7 +108,7 @@ while(input === "1"){
     }
 
     if(day === "saturday" && totalTime <=4){
-      totalCost = morningHours*3 + eveningHours*2;
+      totalCost = morningHours*3 + 2;
 
       priviledgeAccessNumber = prompt("enter the previledge access number or 0 if none");
         if(priviledgeAccessNumber === "0"){
@@ -122,18 +124,122 @@ while(input === "1"){
           }
         }
     }
+
+    discountedCost = totalCost - totalDiscount;
+    console.log("the total cost to access :  $ " + totalCost);
+    console.log("the total hours of internet access :  " + totalTime);
+    console.log("the total discount available : $ " + totalDiscount);
+    console.log("the total discounted price : $ " + discountedCost);
    
+   // task 2 
+    amountPaid = prompt("enter the amount paid");
+    while(amountPaid < discountedCost){
+      amountPaid = prompt("the amount paid is less than the discounted cost please enter the correct amount");
+    }
+    console.log("the amount paid is : $ " + amountPaid);
+
+    totalAmount.push(parseInt(amountPaid));
 
    input = prompt("enter 1 to restart or 0 to end");
 }
 
-discountedCost = totalCost - totalDiscount;
-console.log("the total cost to access :  " + totalCost);
-console.log("the total hours of internet access :  " + totalTime);
-console.log("the total discount available : " + totalDiscount);
-console.log("the total discounted price : " + discountedCost);
+// task 2
+var sum = 0;
+
+for(var i=0; i<totalAmount.length; i++){
+  sum = sum + totalAmount[i];
+}
+
+console.log("the total amount collected at the end of the day is : $ " + sum);
+
+/*
+// task 3
 
 
+
+
+var morningHours;
+var eveningHours;
+
+morningHours = 16-startTimeHour;
+eveningHours = endTimeHour -16;
+
+if(day==="sunday"){
+  totalCost = morningHours*2 + 2;
+  priviledgeAccessNumber = prompt("enter the previledge access number or 0 if none");
+  if(priviledgeAccessNumber === "0"){
+    console.log("you are available for no discount");
+  }else{
+    checkDigitCalculator(priviledgeAccessNumber);
+    if(flag ===1){
+      discountMorningHours = 0.1*2*morningHours;
+      discountEveningHours = 0.5*2*eveningHours;
+      totalDiscount = discountMorningHours + discountEveningHours;
+    }else{
+      totalDiscount = 0;
+    }
+    
+    
+    discountedCost = totalCost - totalDiscount;
+    console.log("the total cost to access :  $ " + totalCost);
+    console.log("the total hours of internet access :  " + totalTime);
+    console.log("the total discount available : $ " + totalDiscount);
+    console.log("the total discounted price : $ " + discountedCost);
+   
+}
+
+
+if(day ==="monday" || day ==="tuesday" || day==="wednesday" || day==="thursday" || day==="friday"){
+  totalCost = morningHours*8 + 2;
+  priviledgeAccessNumber = prompt("enter the previledge access number or 0 if none");
+  if(priviledgeAccessNumber === "0"){
+    console.log("you are available for no discount");
+  }else{
+    checkDigitCalculator(priviledgeAccessNumber);
+    if(flag ===1){
+      discountMorningHours = 0.1*2*morningHours;
+      discountEveningHours = 0.5*2*eveningHours;
+      totalDiscount = discountMorningHours + discountEveningHours;
+    }else{
+      totalDiscount = 0;
+    }
+    
+    
+    discountedCost = totalCost - totalDiscount;
+    console.log("the total cost to access :  $ " + totalCost);
+    console.log("the total hours of internet access :  " + totalTime);
+    console.log("the total discount available : $ " + totalDiscount);
+    console.log("the total discounted price : $ " + discountedCost);
+   
+}
+
+if(day ==="saturday"){
+  totalCost = morningHours*3 + 2;
+  priviledgeAccessNumber = prompt("enter the previledge access number or 0 if none");
+  if(priviledgeAccessNumber === "0"){
+    console.log("you are available for no discount");
+  }else{
+    checkDigitCalculator(priviledgeAccessNumber);
+    if(flag ===1){
+      discountMorningHours = 0.1*2*morningHours;
+      discountEveningHours = 0.5*2*eveningHours;
+      totalDiscount = discountMorningHours + discountEveningHours;
+    }else{
+      totalDiscount = 0;
+    }
+    
+    
+    discountedCost = totalCost - totalDiscount;
+    console.log("the total cost to access :  $ " + totalCost);
+    console.log("the total hours of internet access :  " + totalTime);
+    console.log("the total discount available : $ " + totalDiscount);
+    console.log("the total discounted price : $ " + discountedCost);
+   
+}
+
+
+
+*/
 
 // writing a function to calculate the check digit and also calculate the total price of the game
 function checkDigitCalculator(num){
