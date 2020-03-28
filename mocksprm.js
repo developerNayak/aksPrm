@@ -178,14 +178,7 @@ if(day==="sunday"){
     }else{
       totalDiscount = 0;
     }
-    
-    
-    discountedCost = totalCost - totalDiscount;
-    console.log("the total cost to access :  $ " + totalCost);
-    console.log("the total hours of internet access :  " + totalTime);
-    console.log("the total discount available : $ " + totalDiscount);
-    console.log("the total discounted price : $ " + discountedCost);
-   
+  
 }
 
 
@@ -202,15 +195,7 @@ if(day ==="monday" || day ==="tuesday" || day==="wednesday" || day==="thursday" 
       totalDiscount = discountMorningHours + discountEveningHours;
     }else{
       totalDiscount = 0;
-    }
-    
-    
-    discountedCost = totalCost - totalDiscount;
-    console.log("the total cost to access :  $ " + totalCost);
-    console.log("the total hours of internet access :  " + totalTime);
-    console.log("the total discount available : $ " + totalDiscount);
-    console.log("the total discounted price : $ " + discountedCost);
-   
+    } 
 }
 
 if(day ==="saturday"){
@@ -228,6 +213,9 @@ if(day ==="saturday"){
       totalDiscount = 0;
     }
     
+}
+
+
     
     discountedCost = totalCost - totalDiscount;
     console.log("the total cost to access :  $ " + totalCost);
@@ -235,8 +223,6 @@ if(day ==="saturday"){
     console.log("the total discount available : $ " + totalDiscount);
     console.log("the total discounted price : $ " + discountedCost);
    
-}
-
 
 
 */
