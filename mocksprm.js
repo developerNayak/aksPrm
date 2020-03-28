@@ -131,7 +131,7 @@ while(input === "1"){
     console.log("the total discount available : $ " + totalDiscount);
     console.log("the total discounted price : $ " + discountedCost);
    
-   // task 2 
+   // task 2 part1 starts here
     amountPaid = prompt("enter the amount paid");
     while(amountPaid < discountedCost){
       amountPaid = prompt("the amount paid is less than the discounted cost please enter the correct amount");
@@ -139,12 +139,14 @@ while(input === "1"){
     console.log("the amount paid is : $ " + amountPaid);
 
     totalAmount.push(parseInt(amountPaid));
+// task 2 part1 ends here
+
 
    input = prompt("enter 1 to restart or 0 to end");
 }
 
-// task 2
-var sum = 0;
+// task 2 part 2 starts here
+ var sum = 0;
 
 for(var i=0; i<totalAmount.length; i++){
   sum = sum + totalAmount[i];
@@ -152,9 +154,12 @@ for(var i=0; i<totalAmount.length; i++){
 
 console.log("the total amount collected at the end of the day is : $ " + sum);
 
-/*
-// task 3
+// task 2 part 2 ends here
 
+/*
+
+// task 3 starts here
+ 
 
 
 
@@ -223,7 +228,7 @@ if(day ==="saturday"){
     console.log("the total discount available : $ " + totalDiscount);
     console.log("the total discounted price : $ " + discountedCost);
    
-
+// task 3 ends here
 
 */
 
